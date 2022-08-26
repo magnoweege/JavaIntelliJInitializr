@@ -6,6 +6,7 @@ Simple project from zero to something.
 - Install intelliJ Ultimate/community;
 - Install some basic plugins for intelliJ (if you like) 
 - Create a new project for Spring Boot using IntelliJ initializr;
+
 ![](https://github.com/magnoweege/JavaIntelliJInitializr/blob/master/001.JPG)
 
 # After that we create this "packages" under main "DemoApplication" com.example.demo."packages"
@@ -15,6 +16,8 @@ Simple project from zero to something.
   - controller  // Will be responsible for de communication between View and Model MIDDLEWARE
   - view        // The front website itself (html,jsp,jsf) FRONTEND 
   - repository  // Where the magic happens for data to be persisted!
+  
+  - ## inside the com.example.demo create this 4 "packages", clicking with the right mouse button under new menu > package. ##
   
 # After that we are going to create the files we will needed
 
