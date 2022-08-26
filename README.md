@@ -7,24 +7,23 @@ Simple project from zero to something.
 - Install some basic plugins for intelliJ (if you like) 
 - Create a new project for Spring Boot using IntelliJ initializr;
 ![](https://github.com/magnoweege/JavaIntelliJInitializr/blob/master/001.JPG)
-- After that we create this "packages" under main "DemoApplication" com.example.demo."packages"
-  
-  Conceito MVC (Model, View and Controller):
 
+# After that we create this "packages" under main "DemoApplication" com.example.demo."packages"
+  
+  - Concept MVC (Model, View and Controller):
   - model       // Here we put our model bussines cases (objects) BACKEND
   - controller  // Will be responsible for de communication between View and Model MIDDLEWARE
   - view        // The front website itself (html,jsp,jsf) FRONTEND 
-
   - repository  // Where the magic happens for data to be persisted!
   
-  - After that we are going to create the files we will needed:
+# After that we are going to create the files we will needed
+
+  - inside model > new class file "Website.java"
+  - inside controller > leave it for now!
+  - inside view > leave it for now!
+  - inside repository > new interface file WebsiteRepository.java
   
-    -inside model > new class file "Website.java"
-    -inside controller > leave it for now!
-    -inside view > leave it for now!
-    -inside repository > new interface file WebsiteRepository.java
-  
-  - insert inside the model>Website.java:
+  # insert inside the model>Website.java:
   
 ```sh
     package com.example.demo.model;
@@ -60,7 +59,7 @@ Simple project from zero to something.
 
 ```
 
-insert inside the model>Website.java:
+# insert inside the model>Website.java:
 
 ```sh
 
@@ -75,11 +74,11 @@ public interface WebsiteRepository extends JpaRepository<Website, Long>{
 
 ```
 
-After the creation of structure will look like this:
+# After the creation of structure will look like this:
 
 ![](https://github.com/magnoweege/JavaIntelliJInitializr/blob/master/002.JPG)
 
-insert inside the resources/application.properties:
+# insert inside the resources/application.properties:
 
 ```sh
 spring.h2.console.settings.trace=false
