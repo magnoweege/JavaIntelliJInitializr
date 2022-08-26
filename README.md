@@ -93,6 +93,7 @@ spring.datasource.password=
 
 spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.format_sql=true
+spring.jpa.hibernate.ddl-auto=update
 
 ```
 
@@ -107,6 +108,6 @@ http://localhost:8080/h2
 
 and se the model you've created in de H2 database in memory.
 
-![](https://github.com/magnoweege/JavaIntelliJInitializr/blob/master/004JPG)
+![](https://github.com/magnoweege/JavaIntelliJInitializr/blob/master/004.JPG)
 
 Then we finished the first part of the tutorial.
