@@ -6,25 +6,27 @@ Simple project from zero to something.
 - Install intelliJ Ultimate/community;
 - Install some basic plugins for intelliJ (if you like) 
 - Create a new project for Spring Boot using IntelliJ initializr;
-![](https://github.com/magnoweege/JavaIntelliJInitializr/blob/master/001.JPG)
-- After that we create this "packages" under main "DemoApplication" com.example.demo."packages"
-  
-  Conceito MVC (Model, View and Controller):
 
+![](https://github.com/magnoweege/JavaIntelliJInitializr/blob/master/001.JPG)
+
+# After that we create this "packages" under main "DemoApplication" com.example.demo."packages"
+  
+  - Concept MVC (Model, View and Controller):
   - model       // Here we put our model bussines cases (objects) BACKEND
   - controller  // Will be responsible for de communication between View and Model MIDDLEWARE
   - view        // The front website itself (html,jsp,jsf) FRONTEND 
-
   - repository  // Where the magic happens for data to be persisted!
   
-  - After that we are going to create the files we will needed:
+  - ## inside the com.example.demo create this 4 "packages", clicking with the right mouse button under new menu > package. ##
   
-    -inside model > new class file "Website.java"
-    -inside controller > leave it for now!
-    -inside view > leave it for now!
-    -inside repository > new interface file WebsiteRepository.java
+# After that we are going to create the files we will needed
+
+  - inside model > new class file "Website.java"
+  - inside controller > leave it for now!
+  - inside view > leave it for now!
+  - inside repository > new interface file WebsiteRepository.java
   
-  - insert inside the model>Website.java:
+  # insert inside the model>Website.java:
   
 ```sh
     package com.example.demo.model;
@@ -60,7 +62,7 @@ Simple project from zero to something.
 
 ```
 
-insert inside the model>Website.java:
+# insert inside the model>Website.java:
 
 ```sh
 
@@ -75,11 +77,11 @@ public interface WebsiteRepository extends JpaRepository<Website, Long>{
 
 ```
 
-After the creation of structure will look like this:
+# After the creation of structure will look like this:
 
 ![](https://github.com/magnoweege/JavaIntelliJInitializr/blob/master/002.JPG)
 
-insert inside the resources/application.properties:
+# insert inside the resources/application.properties:
 
 ```sh
 spring.h2.console.settings.trace=false
@@ -111,3 +113,32 @@ and se the model you've created in de H2 database in memory.
 ![](https://github.com/magnoweege/JavaIntelliJInitializr/blob/master/004.JPG)
 
 Then we finished the first part of the tutorial.
+
+<h3>Phase two:</h3>
+
+We are going to create our access to the backend by creating a RestController.
+So, create a new file inside > controller/WebsiteController.java and put write this code:
+
+```sh
+package com.example.demo.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping(value = "/website")
+public class WebsiteController {
+
+    @RequestMapping(method = RequestMethod.GET)
+    public String listarWebsite() {
+        return "You are in!";
+    }
+
+}
+```
+type in your browser localhost:8080/website
+
+and Voila!
+
+![](https://github.com/magnoweege/JavaIntelliJInitializr/blob/master/005.JPG)
