@@ -100,9 +100,13 @@ Now if you save all the files and start the application you will be able to acce
 
 https://www.h2database.com/html/commands.html
 
-http://localhost/h2 
+http://localhost:8080/h2 
 > without password
 
+![](https://github.com/magnoweege/JavaIntelliJInitializr/blob/master/003.JPG)
+
 and se the model you've created in de H2 database in memory.
+
+![](https://github.com/magnoweege/JavaIntelliJInitializr/blob/master/004JPG)
 
 Then we finished the first part of the tutorial.
