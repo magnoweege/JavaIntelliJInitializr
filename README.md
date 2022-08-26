@@ -110,3 +110,32 @@ and se the model you've created in de H2 database in memory.
 ![](https://github.com/magnoweege/JavaIntelliJInitializr/blob/master/004.JPG)
 
 Then we finished the first part of the tutorial.
+
+<h3>Phase two:</h3>
+
+We are going to create our access to the backend by creating a RestController.
+So, create a new file inside > controller/WebsiteController.java and put write this code:
+
+```sh
+package com.example.demo.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping(value = "/website")
+public class WebsiteController {
+
+    @RequestMapping(method = RequestMethod.GET)
+    public String listarWebsite() {
+        return "You are in!";
+    }
+
+}
+```
+type in your browser localhost:8080/website
+
+and Voila!
+
+![](https://github.com/magnoweege/JavaIntelliJInitializr/blob/master/005.JPG)
