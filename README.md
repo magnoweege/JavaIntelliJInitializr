@@ -79,7 +79,7 @@ After the creation of structure will look like this:
 
 ![](https://github.com/magnoweege/JavaIntelliJInitializr/blob/master/002.JPG)
 
-insert inside the DemoApplication.java:
+insert inside the resources/application.properties:
 
 ```sh
 spring.h2.console.settings.trace=false
