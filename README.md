@@ -1,7 +1,7 @@
 # JavaIntelliJInitializr
 Simple project from zero to something.
 
-Phase one:
+<h3>Phase one:</h3>
 
 - Install intelliJ Ultimate/community;
 - Install some basic plugins for intelliJ (if you like) 
@@ -10,11 +10,11 @@ Phase one:
   
   Conceito MVC (Model, View and Controller):
 
-  - model       // Aquificaram seus modelos de negócios (objetos) BACKEND
-  - controller  // Fará a comunicação da View com o Model MIDDLEWARE
-  - view        // FRONTEND 
+  - model       // Here we put our model bussines cases (objects) BACKEND
+  - controller  // Will be responsible for de communication between View and Model MIDDLEWARE
+  - view        // The front website itself (html,jsp,jsf) FRONTEND 
 
-  - repository  // Persistencia no Banco de dados
+  - repository  // Where the magic happens for data to be persisted!
   
   - After that we are going to create the files we will needed:
   
@@ -61,6 +61,8 @@ Phase one:
 
 insert inside the model>Website.java:
 
+```sh
+
 package com.example.demo.repository;
 
 import com.example.demo.model.Website;
@@ -91,6 +93,9 @@ spring.jpa.properties.hibernate.format_sql=true
 
 Now if you save all the files and start the application you will be able to access 
 
-http://localhost/h2 //without password
+http://localhost/h2 
+> without password
 
 and se the model you've created in de H2 database in memory.
+
+Then we finished the first part of the tutorial.
