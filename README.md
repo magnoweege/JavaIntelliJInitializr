@@ -6,6 +6,7 @@ Simple project from zero to something.
 - Install intelliJ Ultimate/community;
 - Install some basic plugins for intelliJ (if you like) 
 - Create a new project for Spring Boot using IntelliJ initializr;
+![](https://github.com/magnoweege/JavaIntelliJInitializr/blob/master/001.JPG)
 - After that we create this "packages" under main "DemoApplication" com.example.demo."packages"
   
   Conceito MVC (Model, View and Controller):
@@ -74,6 +75,10 @@ public interface WebsiteRepository extends JpaRepository<Website, Long>{
 
 ```
 
+After the creation of structure will look like this:
+
+![](https://github.com/magnoweege/JavaIntelliJInitializr/blob/master/002.JPG)
+
 insert inside the DemoApplication.java:
 
 ```sh
@@ -92,6 +97,8 @@ spring.jpa.properties.hibernate.format_sql=true
 ```
 
 Now if you save all the files and start the application you will be able to access 
+
+https://www.h2database.com/html/commands.html
 
 http://localhost/h2 
 > without password
