@@ -1,0 +1,53 @@
+Thymeleaf
+
+javax.servlet.ServletException: Circular view path [home]: would dispatch back to the current handler URL [/home] again. Check your ViewResolver setup! (Hint: This may be the result of an unspecified view, due to default view name generation.) at org.springframework.web.servlet.view.InternalResourceView.prepareForRendering
+	
+	<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope> --> problem
+
+
+
+
+home.html
+
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Demo with Thymeleaf</title>
+</head>
+<body>
+<h1>Hello!!</h1>
+<p>Welcome to <span th:utext="${appName}"/></p>
+</body>
+</html>
+
+
+Controller to create a link between front and back
+
+package com.example.demo.controller;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class WebsiteController {
+
+    @Value("${spring.application.name}")
+    String appName;
+
+    @GetMapping(value = "/home")
+    //public String getWebsite(@RequestParam(name="name", required = false, defaultValue = "World") String name, Model model) {
+    public String getWebsite( Model model) {
+
+       // model.addAttribute("name", name);
+       model.addAttribute("appName", appName);
+        return "home";
+
+    }
+}
+
