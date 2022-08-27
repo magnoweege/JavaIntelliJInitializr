@@ -142,3 +142,39 @@ type in your browser localhost:8080/website
 and Voila!
 
 ![](https://github.com/magnoweege/JavaIntelliJInitializr/blob/master/images/005.JPG)
+
+<h3>Phase four:</h3>
+
+Now that we now how to create a REST template and make a link between Front and Back, we are going to do a diferent aproach.
+We are going to create a couple solution using Thymeleaf, that means we are going to do a MVC using the java solution to create a frontview.
+
+So what have to be clear in this topic is, when you create a REST template with Endpoints to be access, you are doing a non-couple solution and you can use whatever front framework to build a solution to acces the endpoint and interact with de back, for example, Angular, React, Vue.js and so on, however, if you use the thymeleaf solution it will be set inside your java project structure, you can use jsf, jsp, primefaces, and so on in this aproach.
+
+Now lets make some changes do work with thymeleaf and after that we are going to use bootstrap to make things more pretty! ;)
+
+We are going to change our controller a little bit to use thymeleaf, as follow:
+
+```sh
+package com.example.demo.controller;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class WebsiteController {
+
+    @Value("${spring.application.name}")
+    String appName;
+
+    @GetMapping(value = "/home")
+   
+    public String getWebsite( Model model) {
+
+       model.addAttribute("appName", appName);
+        return "home";
+
+    }
+}
+```
