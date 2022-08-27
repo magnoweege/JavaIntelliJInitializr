@@ -152,6 +152,26 @@ So what have to be clear in this topic is, when you create a REST template with 
 
 Now lets make some changes do work with thymeleaf and after that we are going to use bootstrap to make things more pretty! ;)
 
+The first thing to do is to add the dependency for thymeleaf in the pom.xml for maven download the library:
+
+```html
+<dependency>
+ <groupId>org.springframework.boot</groupId>
+ <artifactId>spring-boot-starter-thymeleaf</artifactId>
+</dependency>
+```
+
+Hint: if have this error: ``` javax.servlet.ServletException: Circular view path [home]: would dispatch back to the current handler URL [/home] again. ```
+Then take of the <scope> tag from tomcat as folow:
+
+```html
+<dependency>
+ <groupId>org.springframework.boot</groupId>
+ <artifactId>spring-boot-starter-tomcat</artifactId>
+ ->    <scope>provided</scope>   --> DELETE THIS LINE AND SAVE!
+</dependency>
+```
+
 We are going to change our controller a little bit to use thymeleaf, as follow:
 
 ```sh
@@ -178,3 +198,34 @@ public class WebsiteController {
     }
 }
 ```
+
+Now you have to create a template for the Thymeleaf, then it will seek for the file you will return in the resources/templates/home.html
+
+create a html file inside resources/templates/ and write this code there.
+
+```html
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Demo with Thymeleaf</title>
+</head>
+<body>
+<h1>Hello!!</h1>
+<p>Welcome to <span th:utext="${appName}"/></p>
+</body>
+</html>
+```
+  
+  To finish we are going to create a variable inside the application.properties like this:
+  
+```sh
+  spring.application.name=Thymeleaf template simple setting!
+```
+
+  If you note, we access this variable inside de controller as follow: ``` @Value("${spring.application.name}") ```
+  
+  and now if you run the application using the endpoint we define http://localhost:8080/home you will see this:
+  
+  ![](https://github.com/magnoweege/JavaIntelliJInitializr/blob/master/images/006.JPG)
+  
