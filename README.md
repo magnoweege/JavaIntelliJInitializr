@@ -7,7 +7,7 @@ Simple project from zero to something.
 - Install some basic plugins for intelliJ (if you like) 
 - Create a new project for Spring Boot using IntelliJ initializr;
 
-![](https://github.com/magnoweege/JavaIntelliJInitializr/blob/master/001.JPG)
+![](https://github.com/magnoweege/JavaIntelliJInitializr/blob/master/images/001.JPG)
 
 # After that we create this "packages" under main "DemoApplication" com.example.demo."packages"
   
@@ -79,7 +79,7 @@ public interface WebsiteRepository extends JpaRepository<Website, Long>{
 
 # After the creation of structure will look like this:
 
-![](https://github.com/magnoweege/JavaIntelliJInitializr/blob/master/002.JPG)
+![](https://github.com/magnoweege/JavaIntelliJInitializr/blob/master/images/002.JPG)
 
 # insert inside the resources/application.properties:
 
@@ -106,11 +106,11 @@ https://www.h2database.com/html/commands.html
 http://localhost:8080/h2 
 > without password
 
-![](https://github.com/magnoweege/JavaIntelliJInitializr/blob/master/003.JPG)
+![](https://github.com/magnoweege/JavaIntelliJInitializr/blob/master/images/003.JPG)
 
 and se the model you've created in de H2 database in memory.
 
-![](https://github.com/magnoweege/JavaIntelliJInitializr/blob/master/004.JPG)
+![](https://github.com/magnoweege/JavaIntelliJInitializr/blob/master/images/004.JPG)
 
 Then we finished the first part of the tutorial.
 
@@ -141,4 +141,91 @@ type in your browser localhost:8080/website
 
 and Voila!
 
-![](https://github.com/magnoweege/JavaIntelliJInitializr/blob/master/005.JPG)
+![](https://github.com/magnoweege/JavaIntelliJInitializr/blob/master/images/005.JPG)
+
+<h3>Phase four:</h3>
+
+Now that we now how to create a REST template and make a link between Front and Back, we are going to do a diferent aproach.
+We are going to create a couple solution using Thymeleaf, that means we are going to do a MVC using the java solution to create a frontview.
+
+So what have to be clear in this topic is, when you create a REST template with Endpoints to be access, you are doing a non-couple solution and you can use whatever front framework to build a solution to acces the endpoint and interact with de back, for example, Angular, React, Vue.js and so on, however, if you use the thymeleaf solution it will be set inside your java project structure, you can use jsf, jsp, primefaces, and so on in this aproach.
+
+Now lets make some changes do work with thymeleaf and after that we are going to use bootstrap to make things more pretty! ;)
+
+The first thing to do is to add the dependency for thymeleaf in the pom.xml for maven download the library:
+
+```html
+<dependency>
+ <groupId>org.springframework.boot</groupId>
+ <artifactId>spring-boot-starter-thymeleaf</artifactId>
+</dependency>
+```
+
+Hint: if have this error: ``` javax.servlet.ServletException: Circular view path [home]: would dispatch back to the current handler URL [/home] again. ```
+Then take of the <scope> tag from tomcat as folow:
+
+```html
+<dependency>
+ <groupId>org.springframework.boot</groupId>
+ <artifactId>spring-boot-starter-tomcat</artifactId>
+ ->    <scope>provided</scope>   --> DELETE THIS LINE AND SAVE!
+</dependency>
+```
+
+We are going to change our controller a little bit to use thymeleaf, as follow:
+
+```sh
+package com.example.demo.controller;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class WebsiteController {
+
+    @Value("${spring.application.name}")
+    String appName;
+
+    @GetMapping(value = "/home")
+   
+    public String getWebsite( Model model) {
+
+       model.addAttribute("appName", appName);
+        return "home";
+
+    }
+}
+```
+
+Now you have to create a template for the Thymeleaf, then it will seek for the file you will return in the resources/templates/home.html
+
+create a html file inside resources/templates/ and write this code there.
+
+```html
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Demo with Thymeleaf</title>
+</head>
+<body>
+<h1>Hello!!</h1>
+<p>Welcome to <span th:utext="${appName}"/></p>
+</body>
+</html>
+```
+  
+  To finish we are going to create a variable inside the application.properties like this:
+  
+```sh
+  spring.application.name=Thymeleaf template simple setting!
+```
+
+  If you note, we access this variable inside de controller as follow: ``` @Value("${spring.application.name}") ```
+  
+  and now if you run the application using the endpoint we define http://localhost:8080/home you will see this:
+  
+  ![](https://github.com/magnoweege/JavaIntelliJInitializr/blob/master/images/006.JPG)
+  
