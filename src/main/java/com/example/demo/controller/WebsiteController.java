@@ -1,16 +1,22 @@
 package com.example.demo.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 
-@RestController
-@RequestMapping(value = "/website")
+@Controller
 public class WebsiteController {
 
-    @RequestMapping(method = RequestMethod.GET)
-    public String listarWebsite() {
-        return "You are in!";
-    }
+    @Value("${spring.application.name}")
+    String appName;
 
+    @GetMapping(value = "/home")
+    public String getWebsite( Model model) {
+
+       model.addAttribute("appName", appName);
+        return "home";
+
+    }
 }
+
