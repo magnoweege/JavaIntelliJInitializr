@@ -141,4 +141,4 @@ type in your browser localhost:8080/website
 
 and Voila!
 
-![](https://github.com/magnoweege/JavaIntelliJInitializr/blob/master/images/05.JPG)
+![](https://github.com/magnoweege/JavaIntelliJInitializr/blob/master/images/005.JPG)
