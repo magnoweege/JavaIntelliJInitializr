@@ -7,7 +7,7 @@ Simple project from zero to something.
 - Install some basic plugins for intelliJ (if you like) 
 - Create a new project for Spring Boot using IntelliJ initializr;
 
-![](https://github.com/magnoweege/JavaIntelliJInitializr/blob/master/001.JPG)
+![](https://github.com/magnoweege/JavaIntelliJInitializr/blob/master/images/001.JPG)
 
 # After that we create this "packages" under main "DemoApplication" com.example.demo."packages"
   
@@ -79,7 +79,7 @@ public interface WebsiteRepository extends JpaRepository<Website, Long>{
 
 # After the creation of structure will look like this:
 
-![](https://github.com/magnoweege/JavaIntelliJInitializr/blob/master/002.JPG)
+![](https://github.com/magnoweege/JavaIntelliJInitializr/blob/master/images/002.JPG)
 
 # insert inside the resources/application.properties:
 
@@ -106,11 +106,11 @@ https://www.h2database.com/html/commands.html
 http://localhost:8080/h2 
 > without password
 
-![](https://github.com/magnoweege/JavaIntelliJInitializr/blob/master/003.JPG)
+![](https://github.com/magnoweege/JavaIntelliJInitializr/blob/master/images/003.JPG)
 
 and se the model you've created in de H2 database in memory.
 
-![](https://github.com/magnoweege/JavaIntelliJInitializr/blob/master/004.JPG)
+![](https://github.com/magnoweege/JavaIntelliJInitializr/blob/master/images/004.JPG)
 
 Then we finished the first part of the tutorial.
 
@@ -141,4 +141,4 @@ type in your browser localhost:8080/website
 
 and Voila!
 
-![](https://github.com/magnoweege/JavaIntelliJInitializr/blob/master/005.JPG)
+![](https://github.com/magnoweege/JavaIntelliJInitializr/blob/master/images/05.JPG)
