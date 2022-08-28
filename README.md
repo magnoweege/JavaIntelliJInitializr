@@ -145,7 +145,7 @@ and Voila!
 
 <h3>Phase four:</h3>
 
-Now that we now how to create a REST template and make a link between Front and Back, we are going to do a diferent aproach.
+Now, that we know how to create a REST template and make a link between Front and Back, we are going to do a diferent aproach.
 We are going to create a couple solution using Thymeleaf, that means we are going to do a MVC using the java solution to create a frontview.
 
 So what have to be clear in this topic is, when you create a REST template with Endpoints to be access, you are doing a non-couple solution and you can use whatever front framework to build a solution to acces the endpoint and interact with de back, for example, Angular, React, Vue.js and so on, however, if you use the thymeleaf solution it will be set inside your java project structure, you can use jsf, jsp, primefaces, and so on in this aproach.
