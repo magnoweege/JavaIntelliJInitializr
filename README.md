@@ -62,7 +62,7 @@ Simple project from zero to something.
 
 ```
 
-# insert inside the model>Website.java:
+# insert inside the repository>WebsiteRepository.java:
 
 ```sh
 
